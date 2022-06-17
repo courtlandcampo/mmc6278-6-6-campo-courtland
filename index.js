@@ -4,12 +4,10 @@ var menuEl = document.querySelector("#main-menu")
 
 
 hamburgerBtnEl.addEventListener('click',function(){
-    if (menuEl.classList.contains('showmenu')){
+    if (menuEl.classList.contains('show-menu')){
         collapseMenu()
-
     } else {
         openMenu()
-
     }
 }) 
 
