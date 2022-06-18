@@ -1,9 +1,9 @@
 var hamburgerBtnEl = document.querySelector(".hamburger-btn")
 var menuEl = document.querySelector("#main-menu")
-//var ariaValue = document.querySelector(".hamburger-btn").getAttribute("aria-expanded")
 
 
-hamburgerBtnEl.addEventListener('click',function(){
+hamburgerBtnEl.addEventListener('click',function(e){
+    e.stopPropagation()
     if (menuEl.classList.contains('show-menu')){
         collapseMenu()
     } else {
@@ -20,3 +20,9 @@ function collapseMenu() {
     menuEl.classList.remove('show-menu')
     hamburgerBtnEl.setAttribute('aria-expanded', 'false')
 } 
+
+document.body.addEventListener('click', function(e){
+    if (!menuEl.contains(e.target) && menuEl.classList.contains('show-menu')) {
+        collapseMenu()
+    }
+})
