@@ -30,5 +30,6 @@ document.body.addEventListener('click', function(e){
 document.addEventListener('keyup', function(e){
     if (e.key === 'Escape' && menuEl.classList.contains('show-menu')) {
         collapseMenu()
+        hamburgerBtnEl.focus()
     }
 })
